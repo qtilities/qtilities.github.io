@@ -1,0 +1,35 @@
+- label: "Accessories"
+  type: "dropdown"
+  icon_type: "pencil-square-o"
+  icon_category: "fa"
+  pages:
+  - label: "Magnifiqus"
+    url: "#"
+
+  - label: "QRuler"
+    url: "#"
+
+  - label: "Sqreenshot"
+    url: "#"
+
+- label: "Audio"
+  type: "dropdown"
+  icon_type: "music"
+  icon_category: "fa"
+  pages:
+  - label: "JACKSettings"
+    url: "#"
+
+  - label: "VolTrayke"
+    url: "#"
+
+- label: "Preferences"
+  type: "dropdown"
+  icon_type: "question-circle"
+  icon_category: "fa"
+  pages:
+  - label: "picom-conf"
+    url: "#"
+
+  - label: "sddm-conf"
+    url: "#"

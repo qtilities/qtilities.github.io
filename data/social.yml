@@ -1,0 +1,24 @@
+- label: "GitHub"
+  url: "https://github.com/qtilities/"
+  icon_type: "github"
+  icon_category: "fa"
+
+- label: "IRC"
+  url: https://kiwiirc.com/nextclient/#irc://irc.libera.chat:+6697/#qtilities
+  icon_type: "hashtag"
+  icon_category: "fa"
+
+- label: "Matrix"
+  url: "https://matrix.to/#/#qtilities:libera.chat"
+  icon_type: "matrix-org"
+  icon_category: "fa"
+
+#- label: "News Atom Feed"
+#  url: "/atom.xml"
+#  icon_type: "rss"
+#  icon_category: "fa"
+
+#- label: "EMail"
+#  icon_type: "at"
+#  icon_category: "fa"
+#  url: "/contacts"

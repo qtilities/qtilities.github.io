@@ -1,0 +1,13 @@
+- label: "Quick links"
+  icon_type: "link"
+  icon_category: "fa"
+  links:
+  - label: "Ask for Help"
+    url: "https://github.com/orgs/qtilities/discussions"
+    icon_type: "comments"
+    icon_category: "fa"
+
+  - label: "Translations"
+    url: "https://translate.lxqt-project.org/projects/redtide/"
+    icon_type: "flag"
+    icon_category: "fa"
