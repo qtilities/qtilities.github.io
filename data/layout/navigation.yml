@@ -1,3 +1,7 @@
+# - label: "Categories"
+#   icon_type: "bars"
+#   icon_category: "fa"
+#   links:
 - label: "Accessories"
   type: "dropdown"
   icon_type: "pencil-square-o"
@@ -23,9 +27,9 @@
   - label: "VolTrayke"
     url: "#"
 
-- label: "Preferences"
+- label: "Settings"
   type: "dropdown"
-  icon_type: "question-circle"
+  icon_type: "sliders"
   icon_category: "fa"
   pages:
   - label: "picom-conf"

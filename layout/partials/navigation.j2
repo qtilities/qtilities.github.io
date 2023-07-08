@@ -44,86 +44,90 @@
 
 					<div class="collapse navbar-collapse" id="navbarContent">
 						<ul class="navbar-nav me-auto mt-2 mt-lg-0">
-						{%- set navigation = load_yaml(config.extra.nav) %}
-						{%- for item in navigation %}
-							{%- if item.type == "dropdown" %}
-								{% set item_id = 'navbar' + item.label %}
-							<li class="nav-item dropdown">
-								<a
-									class="nav-link dropdown-toggle"
-									href="#"
-									id="{{ item_id }}"
-									role="button"
-									data-bs-toggle="dropdown"
-									aria-expanded="false"
-									aria-haspopup="true"
-								>
-								{%-if item.icon_type-%}
-									<i
-										class="{{ item.icon_category }} fa-{{ item.icon_type }} fa-fw"
-										aria-hidden="true"></i>&nbsp;
-								{%-endif-%}
-									{{ item.label }}
-								</a>
-								<ul
-									class="dropdown-menu"
-									aria-labelledby="{{ item_id }}"
-								>
-								{%- for subitem in item.pages %}
-									{%- if not subitem.label %}
-									<div class="dropdown-divider"></div>
-									{%- else %}
-										{%- set disabled = "" %}
-										{%- if subitem.disabled %}{%- set disabled = " disabled" %}{%- endif %}
-									<li>
-										<a class="dropdown-item{{ disabled }}"
-											href="{{ subitem.url|url }}"
-										>
-										{%-if subitem.icon_type-%}
-											<i
-												class="{{ subitem.icon_category }} fa-{{ subitem.icon_type }} fa-fw"
-												aria-hidden="true"
-											></i>&nbsp;
+							{%- set navigation = load_yaml(config.extra.nav) %}
+							{%- if navigation %}
+							{%- for item in navigation %}
+								{%- if item.type == "dropdown" %}
+									{% set item_id = 'navbar' + item.label %}
+								<li class="nav-item dropdown">
+									<a
+										class="nav-link dropdown-toggle"
+										href="#"
+										id="{{ item_id }}"
+										role="button"
+										data-bs-toggle="dropdown"
+										aria-expanded="false"
+										aria-haspopup="true"
+									>
+									{%-if item.icon_type-%}
+										<i
+											class="{{ item.icon_category }} fa-{{ item.icon_type }} fa-fw"
+											aria-hidden="true"></i>&nbsp;
+									{%-endif-%}
+										{{ item.label }}
+									</a>
+									<ul
+										class="dropdown-menu"
+										aria-labelledby="{{ item_id }}"
+									>
+									{%- for subitem in item.pages %}
+										{%- if not subitem.label %}
+										<div class="dropdown-divider"></div>
+										{%- else %}
+											{%- set disabled = "" %}
+											{%- if subitem.disabled %}{%- set disabled = " disabled" %}{%- endif %}
+										<li>
+											<a class="dropdown-item{{ disabled }}"
+												href="{{ subitem.url|url }}"
+											>
+											{%-if subitem.icon_type-%}
+												<i
+													class="{{ subitem.icon_category }} fa-{{ subitem.icon_type }} fa-fw"
+													aria-hidden="true"
+												></i>&nbsp;
+											{%- endif %}
+												{{ subitem.label }}
+											</a>
+										</li>
 										{%- endif %}
-											{{ subitem.label }}
-										</a>
-									</li>
-									{%- endif %}
-								{%- endfor %}
-								</ul>
-							{%- else %}
-							<li class="nav-item">
-								<a
-									class="nav-link"
-									href="{{ item.url|url }}"
-								>
-									{%- if item.icon_type %}
-									<i class="{{ item.icon_category }} fa-{{ item.icon_type }} fa-fw"
-										aria-hidden="true"></i>&nbsp;
-									{%- endif %}
-									{{ item.label }}
-								</a>
+									{%- endfor %}
+									</ul>
+								{%- else %}
+								<li class="nav-item">
+									<a
+										class="nav-link"
+										href="{{ item.url|url }}"
+									>
+										{%- if item.icon_type %}
+										<i class="{{ item.icon_category }} fa-{{ item.icon_type }} fa-fw"
+											aria-hidden="true"></i>&nbsp;
+										{%- endif %}
+										{{ item.label }}
+									</a>
+								{%- endif %}
+								</li>
+							{%- endfor %}
 							{%- endif %}
-							</li>
-						{%- endfor %}
 						</ul>
 						<ul class="navbar-nav">
-						{%- set social = load_yaml(config.extra.social) %}
-						{%- for item in social %}
-							<li class="nav-item">
-								<a
-									class="nav-link"
-									href="{{ item.url|url }}"
-									title="{{ item.label }}"
-								>
-									{%- if item.icon_type %}
-									<i class="{{ item.icon_category }} fa-{{ item.icon_type }} fa-fw"
-										aria-hidden="true"></i>
-									{%- endif %}
-								</a>
-							</li>
-						{%- endfor %}
-						{%- block search_button %}
+							{%- set social = load_yaml(config.extra.social) %}
+							{%- if social %}
+							{%- for item in social %}
+								<li class="nav-item">
+									<a
+										class="nav-link"
+										href="{{ item.url|url }}"
+										title="{{ item.label }}"
+									>
+										{%- if item.icon_type %}
+										<i class="{{ item.icon_category }} fa-{{ item.icon_type }} fa-fw"
+											aria-hidden="true"></i>
+										{%- endif %}
+									</a>
+								</li>
+							{%- endfor %}
+							{%- endif %}
+							{%- block search_button %}
 							{%- if 'search' in config['plugins'] %}
 							<li class="nav-item">
 									<a
@@ -137,8 +141,8 @@
 									</a>
 							</li>
 							{%- endif %}
-						{%- endblock %}
-						{# Global Download ?
+							{%- endblock %}
+							{# Global Download ?
 							<li class="nav-item">
 								<a class="nav-link"
 									href="{{ 'downloads'|url }}"
@@ -147,7 +151,7 @@
 									Download
 								</a>
 							</li>
-						#}
+							#}
 							<li class="nav-item dropdown">
 								<button
 									class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
