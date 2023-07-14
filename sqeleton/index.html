@@ -7,7 +7,7 @@
 
 		<title>
 		
-		FAQ -
+		Sqeleton -
 		
 		Qtilities
 		</title>
@@ -227,7 +227,7 @@
 									>
 										<li>
 											<a class="dropdown-item"
-												href="../sqeleton"
+												href="."
 											>
 												Sqeleton
 											</a>
@@ -332,19 +332,41 @@
 			</nav>
 			<div class="row mt-4" id="content">
 				<div class="col-md-9">
-					<article><h1>FAQ</h1><h2 id="missing-submodules">Missing submodules</h2>
-<p>Unfortunately GitHub doesn't include the required git submodules available in
-the repository in their zip / tar.gz packages, so you need to download the
-related source manually separately. This leads to the same error below also
-if you haven't cloned the repository with the <code>--recursive</code> / <code>recurse-submodules</code>
-switch, resulting with the error:</p>
-<pre><code>CMake Error at lib/CMakeLists.txt:NNN (add_subdirectory):
-  The source directory
-    path/to/gitsubmodule
-  does not contain a CMakeLists.txt file.
--- Configuring incomplete, errors occurred!
-</code></pre>
-<p>run <code>git submodule update --init --recursive</code> from the project directory.</p>
+					<article><h1>Sqeleton</h1><p>Sqeleton is a Qt project template to start a new project with a ready structure.</p>
+<h2 id="file-structure">File structure</h2>
+<ul>
+<li><code>.gitignore</code>: usual files that git should ignore in the project</li>
+<li><code>.clang-format</code> and <code>.editorconfig</code>:
+  these files are used to maintain a uniform
+  code style. It mostly depends on programming habits and so it can be modified
+  to suit your needs (same for all other files),
+  but I'm curious to see if a common preference could be possible to be set.</li>
+<li><code>cmake</code>: contains the support files for the resources
+  and should not be modified per project (Pull Requests are welcome).</li>
+<li><code>${CMAKE_PROJECT_NAME}Config.cmake</code>:
+  Project specific CMake configuration file, which must be modified.</li>
+<li><code>src</code>: the usual source directory.</li>
+<li><code>external</code>:
+  contains git submodules required for the project, currently only a fork
+  of LXQt build tools because some required changes.</li>
+<li><code>resources</code>:
+  icon, about dialog content - generic appdata/metainfo and desktop file templates.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<ul>
+<li>From the <a href="https://github.com/qtilities/sqeleton/">Github project page</a>, when creating a new project based on Sqeleton,
+  click the green <code>Use this template</code> dropdown button and select
+  <code>Create a new repository</code> instead of fork, see the related <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template">documentation</a> page
+  for further information.</li>
+<li>Set the project name in <code>CMakeLists.txt</code> and edit <code>Config.cmake</code>.</li>
+<li>Replace <code>resources/icons/application.icon</code> with the appropriated icon for
+  the new application without changing the file name.
+  If not a <code>svg</code>, edit <code>PROJECT_ICON_FORMAT</code> in the configuration file: the name
+  of the resulting icon will be set automatically during the CMake configuration.</li>
+<li>If the translations directory will be moved in a different position,
+  set the new path in <code>PROJECT_TRANSLATIONS_DIR</code> in the configuration file.</li>
+<li>Adapt the resource file in <code>resources/resources.qrc</code> if needed.</li>
+</ul>
 					</article>
 				</div>
 				<div class="col-md-3">
@@ -382,7 +404,7 @@ switch, resulting with the error:</p>
 					Qtilities Organization
 					<span style="float:right">
 						This site is open source.
-						<a href="https://github.com/qtilities/website/edit/master/docs/faq.md">
+						<a href="https://github.com/qtilities/website/edit/master/docs/sqeleton/index.md">
 						Improve this page</a>
 					</span>
 				</p>
