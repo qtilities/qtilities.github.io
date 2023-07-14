@@ -37,3 +37,11 @@
 
   - label: "sddm-conf"
     url: "#"
+
+- label: "Other"
+  type: "dropdown"
+  icon_type: "code"
+  icon_category: "fa"
+  pages:
+  - label: "Sqeleton"
+    url: "sqeleton"
