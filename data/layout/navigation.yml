@@ -1,7 +1,3 @@
-# - label: "Categories"
-#   icon_type: "bars"
-#   icon_category: "fa"
-#   links:
 - label: "Accessories"
   type: "dropdown"
   icon_type: "pencil-square-o"
@@ -45,3 +41,8 @@
   pages:
   - label: "Sqeleton"
     url: "sqeleton"
+
+- label: "News"
+  icon_type: "rss"
+  icon_category: "fa"
+  url: "news"

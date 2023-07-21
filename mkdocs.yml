@@ -42,13 +42,13 @@ plugins:
 #     target_url: "https://github.com/sfztools/sfizz/issues/<num>"
   blogging:
     dirs:
-    - news/posts
-    locale: en
+    - "news/posts"
+    locale: "en"
     full_content: true
     paging: true
     show_total: false
     size: 5
-    template: "blogging-template.html"
+    template: "layout/blogging-plugin.html"
     meta_time_format: "%Y-%m-%d %H:%M:%S"
     time_format: "%Y-%m-%d %H:%M:%S"
   exclude: # TODO: to remove when 1.5 comes out
@@ -79,4 +79,3 @@ watch:
 - data
 - docs
 - layout
-- blogging-template.html
