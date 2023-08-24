@@ -3,14 +3,17 @@
   icon_type: "pencil-square-o"
   icon_category: "fa"
   pages:
+  - label: "Colorpick"
+    url: "https://github.com/qtilities/colorpick/"
+
   - label: "Magnifiqus"
-    url: "#"
+    url: "https://github.com/qtilities/magnifiqus/"
 
   - label: "QRuler"
-    url: "#"
+    url: "https://github.com/qtilities/qruler/"
 
   - label: "Sqreenshot"
-    url: "#"
+    url: "https://github.com/qtilities/sqreenshot/"
 
 - label: "Audio"
   type: "dropdown"
@@ -18,10 +21,10 @@
   icon_category: "fa"
   pages:
   - label: "JACKSettings"
-    url: "#"
+    url: "https://github.com/qtilities/jacksettings/"
 
   - label: "VolTrayke"
-    url: "#"
+    url: "https://github.com/qtilities/voltrayke/"
 
 - label: "Settings"
   type: "dropdown"
@@ -29,18 +32,26 @@
   icon_category: "fa"
   pages:
   - label: "picom-conf"
-    url: "#"
+    url: "https://github.com/qtilities/picom-conf/"
 
   - label: "sddm-conf"
-    url: "#"
+    url: "https://github.com/qtilities/sddm-conf/"
 
-- label: "Other"
+- label: "Programming"
   type: "dropdown"
   icon_type: "code"
   icon_category: "fa"
   pages:
   - label: "Sqeleton"
     url: "sqeleton"
+
+- label: "Widgets"
+  type: "dropdown"
+  icon_type: "code"
+  icon_category: "fa"
+  pages:
+  - label: "Accordion"
+    url: "https://github.com/qtilities/accordion/"
 
 - label: "News"
   icon_type: "rss"
