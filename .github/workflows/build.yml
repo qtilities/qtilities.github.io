@@ -1,6 +1,10 @@
 name: Deploy site
 
-on: { push: { branches: [master] } }
+on:
+  push:
+    branches: [master]
+  workflow_dispatch: # Manual builds
+    branches: [master]
 
 permissions:
   contents: write
